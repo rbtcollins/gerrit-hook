@@ -1,0 +1,7 @@
+[run]
+branch = True
+source = gerrit_hook
+omit = gerrit_hook/tests/*,gerrit_hook/openstack/*
+
+[report]
+ignore-errors = True
