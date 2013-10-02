@@ -27,4 +27,6 @@ def main():
         event = gerrit.getEvent()
         if event.get('type') != 'change-merged':
             continue
-        subprocess.check_call('./' + event.get('type'))
+        returncode = subprocess.call('./' + event.get('type'))
+        if returncode:
+            print("Event hook failed: (%d)" % returncode)
