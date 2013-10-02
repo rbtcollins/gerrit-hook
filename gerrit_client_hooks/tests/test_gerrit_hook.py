@@ -14,7 +14,7 @@
 # under the License.
 
 
-from gerrit_hook.tests import base
+from gerrit_client_hooks.tests import base
 
 
 class TestGerrit_hook(base.TestCase):

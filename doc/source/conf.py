@@ -37,7 +37,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'gerrit-hook'
+project = u'gerrit-client-hooks'
 copyright = u'2013, OpenStack Foundation'
 
 # If true, '()' will be appended to :func: etc. cross-reference text.

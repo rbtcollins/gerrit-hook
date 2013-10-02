@@ -17,4 +17,4 @@ import pbr.version
 
 
 __version__ = pbr.version.VersionInfo(
-    'gerrit_hook').version_string()
+    'gerrit_client_hooks').version_string()

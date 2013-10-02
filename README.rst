@@ -1,11 +1,11 @@
-===========
-gerrit-hook
-===========
+===================
+gerrit-client-hooks
+===================
 
 Run shell commands on gerrit events.
 
 * Free software: Apache license
-* Documentation: http://docs.openstack.org/developer/gerrit-hook
+* Documentation: http://docs.openstack.org/developer/gerrit-client-hooks
 
 Usage
 -----

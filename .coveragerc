@@ -1,7 +1,7 @@
 [run]
 branch = True
-source = gerrit_hook
-omit = gerrit_hook/tests/*,gerrit_hook/openstack/*
+source = gerrit_client_hooks
+omit = gerrit_client_hooks/tests/*,gerrit_client_hooks/openstack/*
 
 [report]
 ignore-errors = True

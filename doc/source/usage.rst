@@ -2,6 +2,6 @@
 Usage
 ========
 
-To use gerrit-hook in a project::
+To use gerrit-client-hooks in a project::
 
-	import gerrit_hook
+	import gerrit_client_hooks
