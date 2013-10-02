@@ -20,7 +20,6 @@ from gerritlib import gerrit as _gerrit
 def main():
     hostname='review.openstack.org'
     username='tripleo-cd-bot'
-    hook_script = 'echo'
     gerrit = _gerrit.Gerrit(
         hostname, username, keyfile='../tripleo-cd/tripleo-cd-bot')
     gerrit.startWatching()
@@ -28,4 +27,4 @@ def main():
         event = gerrit.getEvent()
         if event.get('type') != 'change-merged':
             continue
-        subprocess.check_call(hook_script)
+        subprocess.check_call('./' + event.get('type'))
