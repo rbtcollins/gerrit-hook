@@ -13,11 +13,19 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import subprocess
 
-from gerrit_hook.tests import base
+from gerritlib import gerrit as _gerrit
 
-
-class TestGerrit_hook(base.TestCase):
-
-    def test_something(self):
-        pass
+def main():
+    hostname='review.openstack.org'
+    username='tripleo-cd-bot'
+    hook_script = 'echo'
+    gerrit = _gerrit.Gerrit(
+        hostname, username, keyfile='../tripleo-cd/tripleo-cd-bot')
+    gerrit.startWatching()
+    while True:
+        event = gerrit.getEvent()
+        if event.get('type') != 'change-merged':
+            continue
+        subprocess.check_call(hook_script)
