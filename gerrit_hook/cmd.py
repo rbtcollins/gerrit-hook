@@ -13,15 +13,19 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import argparse
 import subprocess
 
 from gerritlib import gerrit as _gerrit
 
 def main():
+    parser = argparse.ArgumentParser(description='Run scripts on gerrit events.')
+    parser.add_argument("--key-file", help="SSH private key file.")
+    args = parser.parse_args()
     hostname='review.openstack.org'
     username='tripleo-cd-bot'
     gerrit = _gerrit.Gerrit(
-        hostname, username, keyfile='../tripleo-cd/tripleo-cd-bot')
+        hostname, username, keyfile=args.key_file)
     gerrit.startWatching()
     while True:
         event = gerrit.getEvent()
